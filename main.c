@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   main.c                                            :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/16 13:48:54 by jocorral        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jocorral <jocorral@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/10/16 16:06:18 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int	main(int argc, char **argv)
 		stack_add_back(&a, stack_new(ft_atoi(argv[i])));
 		i++;
 	}
+	print_stacks(a, b);
+	ra(&a);
 	print_stacks(a, b);
 	sa(&a);
 	print_stacks(a, b);
