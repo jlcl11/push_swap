@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jocorral <jocorral@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/10/16 16:24:55 by jocorral         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   main.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
+/*   Updated: 2026/10/19 17:53:22 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Imprime a y b en vertical, una al lado de la otra: la cima arriba */
 
-static void	print_stacks(t_stack *a, t_stack *b)
+void	print_stacks(t_stack *a, t_stack *b)
 {
 	while (a || b)
 	{
@@ -68,12 +68,10 @@ int	main(int argc, char **argv)
 		stack_add_back(&a, stack_new(ft_atoi(argv[i])));
 		i++;
 	}
+	ft_putstr_fd("ANTES:\n", 1);
 	print_stacks(a, b);
-	pb(&a, &b);
-	print_stacks(a, b);
-	ra(&a);
-	print_stacks(a, b);
-	sa(&a);
+	bubble_sort(&a);
+	ft_putstr_fd("\nDESPUES (bubble sort):\n", 1);
 	print_stacks(a, b);
 	free_stack(a);
 	free_stack(b);

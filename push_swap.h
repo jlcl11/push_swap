@@ -6,7 +6,7 @@
 /*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/16 12:39:39 by jocorral        ###   ########.fr        */
+/*   Updated: 2026/10/19 17:52:59 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 t_stack	*stack_new(int value);
 void	stack_push(t_stack **stack, t_stack *node);
 void	stack_add_back(t_stack **stack, t_stack *node);
+int		stack_size(t_stack *stack);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 void	sa(t_stack **a);
@@ -36,5 +37,7 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+void	bubble_sort(t_stack **stack);
+void	print_stacks(t_stack *a, t_stack *b);
 
 #endif
