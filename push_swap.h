@@ -25,6 +25,8 @@ typedef struct s_stack
 t_stack	*stack_new(int value);
 void	stack_push(t_stack **stack, t_stack *node);
 void	stack_add_back(t_stack **stack, t_stack *node);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
