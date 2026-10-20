@@ -6,7 +6,7 @@
 /*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/19 15:53:42 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/19 17:53:27 by jocorral        ###   ########.fr        */
+/*   Updated: 2026/10/19 18:02:22 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,10 @@ void	bubble_sort(t_stack **stack)
 			if ((*stack)->value > (*stack)->next->value)
 			{
 				sa(stack);
-				//print_stacks(*stack, NULL);
 			}
 			ra(stack);
-			//print_stacks(*stack, NULL);
 			i++;
 		}
 		ra(stack);
-		//print_stacks(*stack, NULL);
 	}
 }
