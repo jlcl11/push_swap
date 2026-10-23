@@ -6,7 +6,7 @@
 /*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/23 17:27:12 by jocorral        ###   ########.fr        */
+/*   Updated: 2026/10/23 17:36:43 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc < 2)
+	{
+		ft_printf("Error");
 		return (0);
+	}
 	i = 1;
 	while (i < argc)
 	{
