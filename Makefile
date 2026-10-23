@@ -49,7 +49,7 @@ clean:
 fclean: clean
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) fclean
 	$(RM) $(NAME)
-git 
+
 re: fclean all
 
 .PHONY: all libft clean fclean re
