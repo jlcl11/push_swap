@@ -6,7 +6,7 @@
 /*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/19 17:55:11 by jocorral        ###   ########.fr        */
+/*   Updated: 2026/10/23 16:37:16 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,23 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	i = 1;
+	ft_printf("Num args: %d", argc);
+	if (argc <= 0)
+	{
+		ft_putstr_fd("Error\n", 2);
+		free_stack(a);
+		return (1);
+	}
 	while (i < argc)
 	{
 		stack_add_back(&a, stack_new(ft_atoi(argv[i])));
 		i++;
+	}
+	if (has_duplicates(a))
+	{
+		ft_putstr_fd("Error\n", 2);
+		free_stack(a);
+		return (1);
 	}
 	ft_putstr_fd("ANTES:\n", 1);
 	print_stacks(a, b);
