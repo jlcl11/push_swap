@@ -6,7 +6,7 @@
 /*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/23 16:33:14 by jocorral        ###   ########.fr        */
+/*   Updated: 2026/10/23 17:08:08 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <limits.h>
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
 
@@ -27,6 +28,7 @@ t_stack	*stack_new(int value);
 void	stack_push(t_stack **stack, t_stack *node);
 void	stack_add_back(t_stack **stack, t_stack *node);
 int		stack_size(t_stack *stack);
+long	ft_atol(const char *str);
 int		has_duplicates(t_stack *stack);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
