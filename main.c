@@ -43,22 +43,32 @@ static int	error_exit(t_stack **a)
 	return (1);
 }
 
-/* Sin argumentos no se imprime nada, según el subject */
+/*
+** Sin números no se imprime nada, según el subject (también si solo hay
+** flags). Si a ya está ordenada tampoco se hace ningún movimiento.
+** TODO: cuando esté el selector de estrategia, llamarlo aquí con flags.
+*/
 
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	t_flags	flags;
+	int		first;
 
 	a = NULL;
 	b = NULL;
-	if (argc < 2)
+	first = parse_flags(argc, argv, &flags);
+	if (first < 0)
+		return (error_exit(&a));
+	if (first == argc)
 		return (0);
-	if (!parse_args(argc, argv, &a))
+	if (!parse_args(argc - first, argv + first, &a))
 		return (error_exit(&a));
 	ft_printf("ANTES:\n");
 	print_stacks(a, b);
-	bubble_sort(&a);
+	if (!is_sorted(a))
+		bubble_sort(&a);
 	ft_printf("\nDESPUES (bubble sort):\n");
 	print_stacks(a, b);
 	stack_clear(&a);

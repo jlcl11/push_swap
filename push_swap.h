@@ -18,6 +18,20 @@
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
 
+typedef enum e_strategy
+{
+	STRAT_ADAPTIVE,
+	STRAT_SIMPLE,
+	STRAT_MEDIUM,
+	STRAT_COMPLEX
+}	t_strategy;
+
+typedef struct s_flags
+{
+	t_strategy	strategy;
+	int			bench;
+}	t_flags;
+
 typedef struct s_stack
 {
 	int				value;
@@ -32,7 +46,8 @@ void	stack_clear(t_stack **stack);
 int		is_number(const char *str);
 long	ft_atol(const char *str);
 int		has_duplicates(t_stack *stack);
-int		parse_args(int argc, char **argv, t_stack **a);
+int		parse_args(int count, char **args, t_stack **a);
+int		parse_flags(int argc, char **argv, t_flags *flags);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 void	sa(t_stack **a);
@@ -44,6 +59,7 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+int		is_sorted(t_stack *stack);
 void	bubble_sort(t_stack **stack);
 void	print_stacks(t_stack *a, t_stack *b);
 

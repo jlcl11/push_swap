@@ -18,7 +18,7 @@
 ** is_sorted: devuelve 1 si la pila está ordenada de menor a mayor.
 */
 
-static int	is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
 	while (stack && stack->next)
 	{

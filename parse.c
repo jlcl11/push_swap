@@ -56,6 +56,7 @@ static int	add_numbers(t_stack **a, char **nums)
 }
 
 /*
+** Recibe solo los argumentos de números (las flags ya se han saltado).
 ** Ejemplo: ./push_swap 3 "1 2" 4
 ** Cada argumento se parte por espacios con ft_split, así también se aceptan
 ** números entre comillas. El primer número queda en la cima de la pila.
@@ -63,15 +64,15 @@ static int	add_numbers(t_stack **a, char **nums)
 ** Devuelve 1 si todo es correcto y no hay repetidos, 0 si no.
 */
 
-int	parse_args(int argc, char **argv, t_stack **a)
+int	parse_args(int count, char **args, t_stack **a)
 {
 	char	**nums;
 	int		i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (i < count)
 	{
-		nums = ft_split(argv[i], ' ');
+		nums = ft_split(args[i], ' ');
 		if (!nums)
 			return (0);
 		if (!nums[0] || !add_numbers(a, nums))

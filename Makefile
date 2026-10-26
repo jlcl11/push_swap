@@ -22,7 +22,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-SRCS = main.c parse.c parse_utils.c stack.c algorithm.c push.c swap.c rotate.c reverse_rotate.c
+SRCS = main.c flags.c parse.c parse_utils.c stack.c algorithm.c push.c swap.c rotate.c reverse_rotate.c
 
 OBJ_DIR = obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
