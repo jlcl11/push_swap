@@ -12,16 +12,15 @@
 
 #include "push_swap.h"
 
-/* Crea un nodo nuevo con el valor dado */
+/* Crea un nodo nuevo con el valor dado (ft_calloc ya deja next a NULL) */
 t_stack	*stack_new(int value)
 {
 	t_stack	*node;
 
-	node = malloc(sizeof(t_stack));
+	node = ft_calloc(1, sizeof(t_stack));
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->next = NULL;
 	return (node);
 }
 

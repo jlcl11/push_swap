@@ -1,0 +1,88 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   parse_utils.c                                     :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/26 12:00:00 by jocorral         #+#    #+#              */
+/*   Updated: 2026/10/26 12:00:00 by jocorral        ###   ########.fr        */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+/*
+** Devuelve 1 si str es un signo opcional seguido de al menos un dígito.
+** Se comprueba str[i] antes de ft_strchr porque ft_strchr encuentra el '\0'.
+*/
+
+int	is_number(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] && ft_strchr("+-", str[i]))
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/*
+** Como ft_atoi pero devuelve long, para poder detectar desbordamientos de int.
+** Deja de acumular en cuanto se sale del rango de int, así un número con
+** muchísimos dígitos tampoco desborda el long.
+*/
+
+long	ft_atol(const char *str)
+{
+	long	sign;
+	long	n;
+
+	sign = 1;
+	n = 0;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (ft_isdigit(*str))
+	{
+		n = n * 10 + (*str - '0');
+		if (n > (long)INT_MAX + 1)
+			break ;
+		str++;
+	}
+	return (sign * n);
+}
+
+/*
+** Devuelve 1 si algún valor aparece más de una vez en la pila, 0 si no.
+** Compara ya convertidos a int, así "0", "-0" y "00" cuentan como repes.
+*/
+
+int	has_duplicates(t_stack *stack)
+{
+	t_stack	*other;
+
+	while (stack)
+	{
+		other = stack->next;
+		while (other)
+		{
+			if (stack->value == other->value)
+				return (1);
+			other = other->next;
+		}
+		stack = stack->next;
+	}
+	return (0);
+}

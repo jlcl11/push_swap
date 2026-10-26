@@ -39,7 +39,7 @@ static void	swap(t_stack **stack)
 void	sa(t_stack **a)
 {
 	swap(a);
-	ft_putstr_fd("sa\n", 1);
+	ft_printf("sa\n");
 }
 
 /* sb (swap b): swap sobre b */
@@ -47,7 +47,7 @@ void	sa(t_stack **a)
 void	sb(t_stack **b)
 {
 	swap(b);
-	ft_putstr_fd("sb\n", 1);
+	ft_printf("sb\n");
 }
 
 /* ss: sa y sb a la vez, imprime una sola línea */
@@ -56,5 +56,5 @@ void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);
-	ft_putstr_fd("ss\n", 1);
+	ft_printf("ss\n");
 }

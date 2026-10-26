@@ -40,7 +40,7 @@ static void	reverse_rotate(t_stack **stack)
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	ft_putstr_fd("rra\n", 1);
+	ft_printf("rra\n");
 }
 
 /* rrb (reverse rotate b): reverse_rotate sobre b */
@@ -48,7 +48,7 @@ void	rra(t_stack **a)
 void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	ft_putstr_fd("rrb\n", 1);
+	ft_printf("rrb\n");
 }
 
 /* rrr: rra y rrb a la vez, imprime una sola línea */
@@ -57,5 +57,5 @@ void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_putstr_fd("rrr\n", 1);
+	ft_printf("rrr\n");
 }

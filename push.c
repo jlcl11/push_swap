@@ -36,7 +36,7 @@ static void	push(t_stack **src, t_stack **dst)
 void	pa(t_stack **a, t_stack **b)
 {
 	push(b, a);
-	ft_putstr_fd("pa\n", 1);
+	ft_printf("pa\n");
 }
 
 /* pb (push b): toma el primer elemento de a y lo pone encima de b */
@@ -44,5 +44,5 @@ void	pa(t_stack **a, t_stack **b)
 void	pb(t_stack **a, t_stack **b)
 {
 	push(a, b);
-	ft_putstr_fd("pb\n", 1);
+	ft_printf("pb\n");
 }
