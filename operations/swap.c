@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   funciones_orden_simple.c                          :+:      :+:    :+:    */
+/*   swap.c                                            :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /*
 ** swap: intercambia los dos primeros elementos de la cima de la pila.

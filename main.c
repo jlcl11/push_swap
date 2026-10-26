@@ -12,28 +12,6 @@
 
 #include "push_swap.h"
 
-/* Imprime a y b en vertical, una al lado de la otra: la cima arriba */
-
-void	print_stacks(t_stack *a, t_stack *b)
-{
-	while (a || b)
-	{
-		if (a)
-		{
-			ft_printf("%d", a->value);
-			a = a->next;
-		}
-		ft_printf("\t");
-		if (b)
-		{
-			ft_printf("%d", b->value);
-			b = b->next;
-		}
-		ft_printf("\n");
-	}
-	ft_printf("-\t-\na\tb\n\n");
-}
-
 /* Escribe Error por stderr, libera la pila y devuelve el código de salida */
 
 static int	error_exit(t_stack **a)
@@ -65,12 +43,9 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!parse_args(argc - first, argv + first, &a))
 		return (error_exit(&a));
-	ft_printf("ANTES:\n");
-	print_stacks(a, b);
 	if (!is_sorted(a))
 		bubble_sort(&a);
-	ft_printf("\nDESPUES (bubble sort):\n");
-	print_stacks(a, b);
 	stack_clear(&a);
+	stack_clear(&b);
 	return (0);
 }

@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-//Petalo, cactus y
-
 /*
 ** is_sorted: devuelve 1 si la pila está ordenada de menor a mayor.
 */
