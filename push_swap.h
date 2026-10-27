@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/19 17:52:59 by jocorral        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/10/27 07:00:41 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_stack
 {
 	int				value;
+	int				index; // He añadido esto, pqq nos hace falta tener indice en el chunk_sort
 	struct s_stack	*next;
 }	t_stack;
 
@@ -39,5 +40,8 @@ void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 void	bubble_sort(t_stack **stack);
 void	print_stacks(t_stack *a, t_stack *b);
+double	compute_disorder(t_stack *stack);	//joseN ha hecho algo xd xd
+void	index_list(t_stack *stack);
+void	chunk_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif
