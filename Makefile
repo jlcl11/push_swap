@@ -1,28 +1,26 @@
-# ************************************************************************** #
-#                                                                            #
-#                                                        :::      ::::::::   #
-#   Makefile                                           :+:      :+:    :+:   #
-#                                                    +:+ +:+         +:+     #
-#   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        #
-#                                                +#+#+#+#+#+   +#+           #
-#   Created: 2026/10/23 00:00:00 by jocorral          #+#    #+#             #
-#   Updated: 2026/10/23 00:00:00 by jocorral         ###   ########.fr       #
-#                                                                            #
-# ************************************************************************** #
-
 NAME = push_swap
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
+CC 			= cc
+CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -f
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
+LIBFT_DIR 	= libft
+LIBFT 		= $(LIBFT_DIR)/libft.a
 
-SRCS = main.c stack.c algorithm.c push.c swap.c rotate.c reverse_rotate.c
+SRCS 		= main.c \
+			  stack.c \
+			  push.c \
+			  swap.c \
+			  rotate.c \
+			  reverse_rotate.c \
+			  bubble_algorithm.c \
+			  chunck_algorithm.c \
+			  quickSort_algorithm.c \
+			  compute_disorder.c\
+			  utils.c \
 
-OBJ_DIR = obj
-OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+OBJ_DIR 	= obj
+OBJS 		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: libft $(NAME)
 

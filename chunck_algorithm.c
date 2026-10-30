@@ -28,9 +28,9 @@ static void	move_to_top(t_stack **stack, int target, int is_b)
 	int		poss;
 	t_stack	*i;
 
-	i = stack;
+	i = *stack;
 	poss = 0;
-	size = stack_size(stack);
+	size = stack_size(*stack);
 	while (i->index != target)
 	{
 		poss++;
@@ -61,12 +61,12 @@ static void	push_chunk(t_stack **stack_a, t_stack **stack_b, int start, int end)
 		while (i && (i->index < start || i->index >= end))
 			i = i->next;
 		if (!i)
-			break;
+			break ;
 		j = i->index;
 		move_to_top(stack_a, j, 0);
-		pb(&stack_a, &stack_b);
+		pb(stack_a, stack_b);
 		if (j < start + (end - start) / 2)
-			rb(&stack_b);
+			rb(stack_b);
 	}
 }
 
@@ -94,12 +94,12 @@ void	chunk_sort(t_stack **stack_a, t_stack **stack_b)
 	size = stack_size(*stack_a);
 	chunk = round_sqrt(size);
 	start = 0;
-	while ((start + chunk -1) < size)
+	while (start < size)
 	{
 		end = start + chunk;
 		if (end > size)
 			end = size;
-		push_chunk(stack_a, stack_b, start, (start + chunk - 1));
+		push_chunk(stack_a, stack_b, start, end);
 		start = end;
 	}
 	max_index = size - 1;
