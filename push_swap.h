@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/10/31 13:43:24 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/10/31 15:33:10 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
-typedef struct s_stack
+typedef struct	s_stack
 {
 	int				value;
 	int				index; // He añadido esto, pqq nos hace falta tener indice en el chunk_sort
