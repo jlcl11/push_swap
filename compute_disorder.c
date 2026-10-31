@@ -14,7 +14,7 @@ double	compute_disorder(t_stack *stack)
 	while (i)
 	{
 		j = i->next;
-		if (j)
+		while (j)
 		{
 			pairs++;
 			if (i->value > j->value)

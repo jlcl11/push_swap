@@ -15,9 +15,9 @@ SRCS 		= main.c \
 			  reverse_rotate.c \
 			  bubble_algorithm.c \
 			  chunck_algorithm.c \
-			  quickSort_algorithm.c \
+			  radix_sort_algorithm.c \
 			  compute_disorder.c\
-			  utils.c \
+			  adaptative_algorithm.c \
 
 OBJ_DIR 	= obj
 OBJS 		= $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))

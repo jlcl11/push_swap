@@ -6,11 +6,12 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/10/30 03:19:45 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/10/31 13:44:23 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 /* Imprime a y b en vertical, una al lado de la otra: la cima arriba */
 
@@ -70,8 +71,9 @@ int	main(int argc, char **argv)
 	}
 	ft_putstr_fd("ANTES:\n", 1);
 	print_stacks(a, b);
-	chunk_sort(&a, &b);
-	ft_putstr_fd("\nDESPUES (quick_sort):\n", 1);
+	printf("Nivel de desorden: %f\n", compute_disorder(a));
+	adaptative_sort(&a, &b);
+	ft_putstr_fd("\nDESPUES (radix_sort):\n", 1);
 	print_stacks(a, b);
 	free_stack(a);
 	free_stack(b);

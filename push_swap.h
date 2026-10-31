@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/10/30 06:58:23 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/10/31 13:43:24 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,7 @@ void	print_stacks(t_stack *a, t_stack *b);
 double	compute_disorder(t_stack *stack);	//joseN ha hecho algo xd xd
 void	index_list(t_stack *stack);
 void	chunk_sort(t_stack **stack_a, t_stack **stack_b);
-void	quick_sort(t_stack **stack_a, t_stack **stack_b);
-void	quick_sort_a(t_stack **stack_a, t_stack **stack_b, int size);
-void	quick_sort_b(t_stack **stack_a, t_stack **stack_b, int size);
-void	ft_sort_int_tab(int *tab, int size);
-void	sort_three_a(t_stack **stack);
-void	sort_three_b(t_stack **stack);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+void	adaptative_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif
