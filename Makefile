@@ -34,14 +34,13 @@ OPS = push.c swap.c rotate.c reverse_rotate.c
 ALGOS = selection_algorithm.c chunck_algorithm.c radix_sort_algorithm.c \
 	compute_disorder.c adaptative_algorithm.c
 
-SRCS = main.c \
-	$(addprefix parseo/, $(PARSING)) \
+SRCS = $(addprefix parseo/, $(PARSING)) \
 	$(addprefix stack/, $(STACK)) \
 	$(addprefix operaciones/, $(OPS)) \
 	$(addprefix algoritmos/, $(ALGOS))
 
 OBJ_DIR = obj
-OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+OBJS = $(OBJ_DIR)/main.o $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: libft printf $(NAME)
 
@@ -61,6 +60,11 @@ $(PRINTF):
 
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) $(LIBFT) -o $(NAME)
+
+# main.c está en la raíz, fuera de SRC_DIR
+$(OBJ_DIR)/main.o: main.c $(HEADER)
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 # mkdir -p crea también las subcarpetas de obj/
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
