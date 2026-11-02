@@ -53,7 +53,7 @@ void	adaptative_sort(t_stack **stack_a, t_stack **stack_b)
 		sa(stack_a);
 	else if (size == 3)
 		sort_three(stack_a);
-	else if (disorder < 0.2)
+	else if (size <= 5 || disorder < 0.2)
 		selection_sort(stack_a, stack_b);
 	else if (disorder >= 0.2 && disorder < 0.5)
 		chunk_sort(stack_a, stack_b);

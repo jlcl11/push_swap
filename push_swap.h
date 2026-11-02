@@ -83,7 +83,4 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 /* adaptative_algorithm.c */
 void	adaptative_sort(t_stack **stack_a, t_stack **stack_b);
 
-/* debug.c */
-void	print_stacks(t_stack *a, t_stack *b);
-
 #endif
