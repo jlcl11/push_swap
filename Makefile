@@ -24,10 +24,9 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = $(LIB_DIR)/printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-INC_DIR = include
-HEADER = $(INC_DIR)/push_swap.h
+HEADER = push_swap.h
 
-SRC_DIR = src
+SRC_DIR = ficheros
 
 PARSING = flags.c parse.c parse_utils.c
 STACK = stack.c debug.c
@@ -36,10 +35,10 @@ ALGOS = bubble_algorithm.c chunck_algorithm.c radix_sort_algorithm.c \
 	compute_disorder.c adaptative_algorithm.c
 
 SRCS = main.c \
-	$(addprefix parsing/, $(PARSING)) \
+	$(addprefix parseo/, $(PARSING)) \
 	$(addprefix stack/, $(STACK)) \
-	$(addprefix operations/, $(OPS)) \
-	$(addprefix algorithms/, $(ALGOS))
+	$(addprefix operaciones/, $(OPS)) \
+	$(addprefix algoritmos/, $(ALGOS))
 
 OBJ_DIR = obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
@@ -66,7 +65,7 @@ $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
 # mkdir -p crea también las subcarpetas de obj/
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 clean:
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) clean
