@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <limits.h>
-# include "lib/libft/libft.h"
-# include "lib/printf/ft_printf.h"
+# include "../lib/libft/libft.h"
+# include "../lib/printf/ft_printf.h"
 
 typedef enum e_strategy
 {

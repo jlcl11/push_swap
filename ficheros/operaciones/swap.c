@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 /*
 ** swap: intercambia los dos primeros elementos de la cima de la pila.

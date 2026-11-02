@@ -24,13 +24,22 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = $(LIB_DIR)/printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-OPS_DIR = operations
-OPS = push.c swap.c rotate.c reverse_rotate.c
+INC_DIR = include
+HEADER = $(INC_DIR)/push_swap.h
 
-SRCS = main.c flags.c parse.c parse_utils.c stack.c debug.c \
-	bubble_algorithm.c chunck_algorithm.c radix_sort_algorithm.c \
-	compute_disorder.c adaptative_algorithm.c \
-	$(addprefix $(OPS_DIR)/, $(OPS))
+SRC_DIR = src
+
+PARSING = flags.c parse.c parse_utils.c
+STACK = stack.c debug.c
+OPS = push.c swap.c rotate.c reverse_rotate.c
+ALGOS = bubble_algorithm.c chunck_algorithm.c radix_sort_algorithm.c \
+	compute_disorder.c adaptative_algorithm.c
+
+SRCS = main.c \
+	$(addprefix parsing/, $(PARSING)) \
+	$(addprefix stack/, $(STACK)) \
+	$(addprefix operations/, $(OPS)) \
+	$(addprefix algorithms/, $(ALGOS))
 
 OBJ_DIR = obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
@@ -54,10 +63,10 @@ $(PRINTF):
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) $(LIBFT) -o $(NAME)
 
-# mkdir -p crea también obj/operations/
-$(OBJ_DIR)/%.o: %.c push_swap.h
+# mkdir -p crea también las subcarpetas de obj/
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 clean:
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR) clean

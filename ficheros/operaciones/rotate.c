@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 /*
 ** rotate: el primer elemento pasa a ser el último. No imprime nada.
