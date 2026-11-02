@@ -21,10 +21,23 @@ static int	error_exit(t_stack **a)
 	return (1);
 }
 
+/* Ejecuta el algoritmo de la estrategia elegida con las flags */
+
+static void	run_strategy(t_stack **a, t_stack **b, t_strategy strategy)
+{
+	if (strategy == STRAT_SIMPLE)
+		bubble_sort(a);
+	else if (strategy == STRAT_MEDIUM)
+		chunk_sort(a, b);
+	else if (strategy == STRAT_COMPLEX)
+		radix_sort(a, b);
+	else
+		adaptative_sort(a, b);
+}
+
 /*
 ** Sin números no se imprime nada, según el subject (también si solo hay
 ** flags). Si a ya está ordenada tampoco se hace ningún movimiento.
-** TODO: cuando esté el selector de estrategia, llamarlo aquí con flags.
 */
 
 int	main(int argc, char **argv)
@@ -44,7 +57,7 @@ int	main(int argc, char **argv)
 	if (!parse_args(argc - first, argv + first, &a))
 		return (error_exit(&a));
 	if (!is_sorted(a))
-		adaptative_sort(&a, &b);
+		run_strategy(&a, &b, flags.strategy);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);
