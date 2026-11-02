@@ -16,10 +16,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-LIBFT_DIR = libft
+LIB_DIR = lib
+
+LIBFT_DIR = $(LIB_DIR)/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-PRINTF_DIR = printf
+PRINTF_DIR = $(LIB_DIR)/printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
 OPS_DIR = operations
