@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   compute_disorder.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/27 07:12:57 by jnunez-b          #+#    #+#             */
+/*   Updated: 2026/11/02 11:15:00 by jocorral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 double	compute_disorder(t_stack *stack)
 {
-	t_stack *i;
+	t_stack	*i;
 	t_stack	*j;
-	int	pairs;
-	int	mistakes;
+	int		pairs;
+	int		mistakes;
 
 	pairs = 0;
 	mistakes = 0;

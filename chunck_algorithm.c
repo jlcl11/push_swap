@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   chunck_algorithm.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/27 07:12:57 by jnunez-b          #+#    #+#             */
+/*   Updated: 2026/11/02 11:15:00 by jocorral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	index_list(t_stack *stack)
@@ -36,18 +48,17 @@ static void	move_to_top(t_stack **stack, int target, int is_b)
 		poss++;
 		i = i->next;
 	}
-	if (poss <= size / 2)
-		while ((*stack)->index != target)
-			if (is_b)
-				rb(stack);
-			else
-				ra(stack);
-	else
-		while ((*stack)->index != target)
-			if (is_b)
-				rrb(stack);
-			else
-				rra(stack);
+	while ((*stack)->index != target)
+	{
+		if (poss <= size / 2 && is_b)
+			rb(stack);
+		else if (poss <= size / 2)
+			ra(stack);
+		else if (is_b)
+			rrb(stack);
+		else
+			rra(stack);
+	}
 }
 
 static void	push_chunk(t_stack **stack_a, t_stack **stack_b, int start, int end)

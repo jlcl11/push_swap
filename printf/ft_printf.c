@@ -27,13 +27,13 @@ int	ft_parser(char c, va_list *args)
 	else if (c == 'u')
 		return (ft_putnbr_ubase(va_arg(*args, unsigned int), "0123456789"));
 	else if (c == 'x')
-		return (((ft_putnbr_ubase(va_arg(*args, unsigned int),
-				"0123456789abcdef"))));
+		return (ft_putnbr_ubase(va_arg(*args, unsigned int),
+				"0123456789abcdef"));
 	else if (c == 'X')
-		return (((ft_putnbr_ubase(va_arg(*args, unsigned int),
-				"0123456789ABCDEF"))));
+		return (ft_putnbr_ubase(va_arg(*args, unsigned int),
+				"0123456789ABCDEF"));
 	else if (c == '%')
-		return (ft_putchar('%'));	
+		return (ft_putchar('%'));
 	return (ft_putchar('%') + ft_putchar(c));
 }
 

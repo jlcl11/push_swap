@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_sort_algorithm.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/31 13:49:16 by jnunez-b          #+#    #+#             */
+/*   Updated: 2026/11/02 11:15:00 by jocorral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	get_max_bits(int size)
@@ -11,6 +23,7 @@ static int	get_max_bits(int size)
 		bits++;
 	return (bits);
 }
+
 void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	max_bits;
@@ -27,7 +40,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 		j = 0;
 		while (j < size)
 		{
-			if((((*stack_a)->index >> i) & 1) == 0)
+			if ((((*stack_a)->index >> i) & 1) == 0)
 				pb(stack_a, stack_b);
 			else
 				ra(stack_a);
