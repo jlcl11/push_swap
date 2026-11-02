@@ -25,7 +25,9 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 OPS_DIR = operations
 OPS = push.c swap.c rotate.c reverse_rotate.c
 
-SRCS = main.c flags.c parse.c parse_utils.c stack.c algorithm.c debug.c \
+SRCS = main.c flags.c parse.c parse_utils.c stack.c debug.c \
+	bubble_algorithm.c chunck_algorithm.c radix_sort_algorithm.c \
+	compute_disorder.c adaptative_algorithm.c \
 	$(addprefix $(OPS_DIR)/, $(OPS))
 
 OBJ_DIR = obj

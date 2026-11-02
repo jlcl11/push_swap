@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	if (!parse_args(argc - first, argv + first, &a))
 		return (error_exit(&a));
 	if (!is_sorted(a))
-		bubble_sort(&a);
+		adaptative_sort(&a, &b);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

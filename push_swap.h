@@ -35,6 +35,7 @@ typedef struct s_flags
 typedef struct s_stack
 {
 	int				value;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -65,9 +66,22 @@ void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
-/* algorithm.c */
+/* bubble_algorithm.c */
 int		is_sorted(t_stack *stack);
 void	bubble_sort(t_stack **stack);
+
+/* compute_disorder.c */
+double	compute_disorder(t_stack *stack);
+
+/* chunck_algorithm.c */
+void	index_list(t_stack *stack);
+void	chunk_sort(t_stack **stack_a, t_stack **stack_b);
+
+/* radix_sort_algorithm.c */
+void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+
+/* adaptative_algorithm.c */
+void	adaptative_sort(t_stack **stack_a, t_stack **stack_b);
 
 /* debug.c */
 void	print_stacks(t_stack *a, t_stack *b);

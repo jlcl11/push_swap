@@ -1,0 +1,7 @@
+*.pdf
+*.out
+obj/
+.vscode
+*.a
+push_swap
+checker_linux
