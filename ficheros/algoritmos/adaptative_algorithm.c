@@ -54,7 +54,7 @@ void	adaptative_sort(t_stack **stack_a, t_stack **stack_b)
 	else if (size == 3)
 		sort_three(stack_a);
 	else if (disorder < 0.2)
-		bubble_sort(stack_a);
+		selection_sort(stack_a, stack_b);
 	else if (disorder >= 0.2 && disorder < 0.5)
 		chunk_sort(stack_a, stack_b);
 	else if (disorder >= 0.5)

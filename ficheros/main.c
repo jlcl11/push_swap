@@ -26,7 +26,7 @@ static int	error_exit(t_stack **a)
 static void	run_strategy(t_stack **a, t_stack **b, t_strategy strategy)
 {
 	if (strategy == STRAT_SIMPLE)
-		bubble_sort(a);
+		selection_sort(a, b);
 	else if (strategy == STRAT_MEDIUM)
 		chunk_sort(a, b);
 	else if (strategy == STRAT_COMPLEX)

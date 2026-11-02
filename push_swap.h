@@ -66,9 +66,9 @@ void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
-/* bubble_algorithm.c */
+/* selection_algorithm.c */
 int		is_sorted(t_stack *stack);
-void	bubble_sort(t_stack **stack);
+void	selection_sort(t_stack **a, t_stack **b);
 
 /* compute_disorder.c */
 double	compute_disorder(t_stack *stack);
