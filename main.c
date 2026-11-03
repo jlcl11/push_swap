@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 18:15:18 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 18:35:18 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	display_bench(t_flags *flags)
 	ft_putnbr_fd(disord1, 2);
 	ft_putchar_fd('.', 2);
 	ft_putnbr_fd(disord2, 2);
-	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("%\n", 2);
 	ft_putstr_fd("[bench] strategy: ", 2);
 	ft_putstr_fd(flags->strag_name, 2);
 	ft_putstr_fd(" / ", 2);

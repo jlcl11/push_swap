@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 07:12:57 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/03 14:15:26 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 18:38:05 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,5 @@ void	chunk_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunky,
 		pa(stack_a, stack_b, flags);
 		max_index--;
 	}
+	flags->complexity = "O(n√n)";
 }
