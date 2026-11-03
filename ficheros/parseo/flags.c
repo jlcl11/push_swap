@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 13:29:43 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 13:45:14 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static int	set_strategy(const char *arg, t_flags *flags, int *chosen)
 */
 static void	init_bench_count(t_flags *flags)
 {
+	flags->disorder = 0;
 	flags->pa = 0;
 	flags->pb = 0;
 	flags->sa = 0;
