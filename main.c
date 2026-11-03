@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 17:44:05 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 18:15:18 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,28 @@ static void	run_strategy(t_stack **a, t_stack **b, t_chunk *chunky,
 	else
 		adaptative_sort(a, b, chunky, flags);
 }
+void	display_bench_continue(t_flags *flags)
+{
+	ft_putnbr_fd(flags->ss, 2);
+	ft_putstr_fd("  pa: ", 2);
+	ft_putnbr_fd(flags->pa, 2);
+	ft_putstr_fd("  pb: ", 2);
+	ft_putnbr_fd(flags->pb, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("[bench] ra: ", 2);
+	ft_putnbr_fd(flags->ra, 2);
+	ft_putstr_fd("  rb: ", 2);
+	ft_putnbr_fd(flags->rb, 2);
+	ft_putstr_fd("  rr: ", 2);
+	ft_putnbr_fd(flags->rr, 2);
+	ft_putstr_fd("  rra: ", 2);
+	ft_putnbr_fd(flags->rra, 2);
+	ft_putstr_fd("  rrb: ", 2);
+	ft_putnbr_fd(flags->rrb, 2);
+	ft_putstr_fd("  rrr: ", 2);
+	ft_putnbr_fd(flags->rrr, 2);
+	ft_putchar_fd('\n', 2);
+}
 
 void	display_bench(t_flags *flags)
 {
@@ -43,19 +65,25 @@ void	display_bench(t_flags *flags)
 
 	disord1 = (int)(flags->disorder * 100);
 	disord2 = (int)(flags->disorder * 10000 - disord1 * 100);
-	ft_printf_error("[bench] ");
-	ft_printf_error("disorder: %d.%d\n", disord1, disord2);
-	ft_printf_error("[bench] ");
-	ft_printf_error("strategy: %s / %s\n", flags->strag_name, flags->complexity);
-	ft_printf_error("[bench] ");
-	ft_printf_error("total_ops: %d\n", flags->total);
-	ft_printf_error("[bench] ");
-	ft_printf_error("sa: %d  sb: %d  ss: %d  ", flags->sa, flags->sb,flags->ss);
-	ft_printf_error("pa: %d  pb: %d\n", flags->pa, flags->pb);
-	ft_printf_error("[bench] ");
-	ft_printf_error("ra: %d  rb: %d  rr: %d  ", flags->ra, flags->rb,flags->rr);
-	ft_printf_error("rra: %d  rrb: %d  rrr: %d\n", flags->rra, flags->rrb,
-		flags->rrr);
+	ft_putstr_fd("[bench] disorder: ", 2);
+	ft_putnbr_fd(disord1, 2);
+	ft_putchar_fd('.', 2);
+	ft_putnbr_fd(disord2, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("[bench] strategy: ", 2);
+	ft_putstr_fd(flags->strag_name, 2);
+	ft_putstr_fd(" / ", 2);
+	ft_putstr_fd(flags->complexity, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("[bench] total_ops: ", 2);
+	ft_putnbr_fd(flags->total, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putstr_fd("[bench] sa: ", 2);
+	ft_putnbr_fd(flags->sa, 2);
+	ft_putstr_fd("  sb: ", 2);
+	ft_putnbr_fd(flags->sb, 2);
+	ft_putstr_fd("  ss: ", 2);
+	display_bench_continue(flags);
 }
 /*
 ** Sin números no se imprime nada, según el subject (también si solo hay
