@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 14:20:22 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 17:08:28 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,27 @@ static void	run_strategy(t_stack **a, t_stack **b, t_chunk *chunky,
 		adaptative_sort(a, b, chunky, flags);
 }
 
+void	display_bench(t_flags *flags)
+{
+	int	disord1;
+	int	disord2;
+
+	disord1 = (int)(flags->disorder * 100);
+	disord2 = (int)(flags->disorder * 10000 - disord1 * 100);
+	ft_printf("[bench] ");
+	ft_printf("disorder: %d.%d\n", disord1, disord2);
+	ft_printf("[bench] ");
+	ft_printf("strategy: %s / %s\n", flags->strag_name, flags->complexity);
+	ft_printf("[bench] ");
+	ft_printf("total_ops: %d\n", flags->total);
+	ft_printf("[bench] ");
+	ft_printf("sa: %d  sb: %d  ss: %d  ", flags->sa, flags->sb,flags->ss);
+	ft_printf("pa: %d  pb: %d\n", flags->pa, flags->pb);
+	ft_printf("[bench] ");
+	ft_printf("ra: %d  rb: %d  rr: %d  ", flags->ra, flags->rb,flags->rr);
+	ft_printf("rra: %d  rrb: %d  rrr: %d\n", flags->rra, flags->rrb,
+		flags->rrr);
+}
 /*
 ** Sin números no se imprime nada, según el subject (también si solo hay
 ** flags). Si a ya está ordenada tampoco se hace ningún movimiento.
@@ -60,6 +81,8 @@ int	main(int argc, char **argv)
 		return (error_exit(&a));
 	if (!is_sorted(a))
 		run_strategy(&a, &b, &chunky, &flags);
+	if (flags.bench)
+		display_bench(&flags);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);
