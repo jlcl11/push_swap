@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   swap.c                                            :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 12:10:08 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/16 13:51:48 by jocorral        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/16 12:10:08 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/03 12:54:30 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,31 @@ static void	swap(t_stack **stack)
 
 /* sa (swap a): swap sobre a */
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, t_flags *flags)
 {
 	swap(a);
+	flags->sa++;
+	flags->total++;
 	ft_printf("sa\n");
 }
 
 /* sb (swap b): swap sobre b */
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, t_flags *flags)
 {
 	swap(b);
+	flags->sb++;
+	flags->total++;
 	ft_printf("sb\n");
 }
 
 /* ss: sa y sb a la vez, imprime una sola línea */
 
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b, t_flags *flags)
 {
 	swap(a);
 	swap(b);
+	flags->ss++;
+	flags->total++;
 	ft_printf("ss\n");
 }

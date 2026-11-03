@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   flags.c                                           :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/26 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/26 12:00:00 by jocorral        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   flags.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 12:00:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/03 13:29:43 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,41 @@ static int	set_strategy(const char *arg, t_flags *flags, int *chosen)
 ** selectores a la vez son un error.
 ** Devuelve el índice del primer número en argv, o -1 si hay error.
 */
-
+static void	init_bench_count(t_flags *flags)
+{
+	flags->pa = 0;
+	flags->pb = 0;
+	flags->sa = 0;
+	flags->sb = 0;
+	flags->ss = 0;
+	flags->ra = 0;
+	flags->rb = 0;
+	flags->rr = 0;
+	flags->rra = 0;
+	flags->rrb = 0;
+	flags->rrr = 0;
+	flags->total = 0;
+}
+static void	set_description(t_flags *flags)
+{
+	if (flags->strategy == STRAT_SIMPLE)
+	{
+		flags->strag_name = "Simple";
+		flags->complexity = "O(n²)";
+	}
+	else if (flags->strategy == STRAT_MEDIUM)
+	{
+		flags->strag_name = "Medium";
+		flags->complexity = "O(n√n)";
+	}
+	else if (flags->strategy == STRAT_COMPLEX)
+	{
+		flags->strag_name = "Complex";
+		flags->complexity = "O(nlogn)";
+	}
+	else
+		flags->strag_name = "Adaptive";
+}
 int	parse_flags(int argc, char **argv, t_flags *flags)
 {
 	int	chosen;
@@ -59,6 +93,7 @@ int	parse_flags(int argc, char **argv, t_flags *flags)
 	flags->bench = 0;
 	chosen = 0;
 	i = 1;
+	init_bench_count(flags);
 	while (i < argc && ft_strncmp(argv[i], "--", 2) == 0)
 	{
 		if (is_flag(argv[i], "--bench"))
@@ -71,5 +106,6 @@ int	parse_flags(int argc, char **argv, t_flags *flags)
 			return (-1);
 		i++;
 	}
+	set_description(flags);
 	return (i);
 }

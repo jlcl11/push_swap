@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 07:12:57 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/02 11:15:00 by jocorral         ###   ########.fr       */
+/*   Updated: 2026/11/03 13:22:39 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	index_list(t_stack *stack)
 	}
 }
 
-static void	move_to_top(t_stack **stack, int target, int is_b)
+static void	move_to_top(t_stack **stack, int target, int is_b, t_flags *flags)
 {
 	int		size;
 	int		poss;
@@ -51,17 +51,18 @@ static void	move_to_top(t_stack **stack, int target, int is_b)
 	while ((*stack)->index != target)
 	{
 		if (poss <= size / 2 && is_b)
-			rb(stack);
+			rb(stack, flags);
 		else if (poss <= size / 2)
-			ra(stack);
+			ra(stack, flags);
 		else if (is_b)
-			rrb(stack);
+			rrb(stack, flags);
 		else
-			rra(stack);
+			rra(stack, flags);
 	}
 }
 
-static void	push_chunk(t_stack **stack_a, t_stack **stack_b, int start, int end)
+static void	push_chunk(t_stack **stack_a, t_stack **stack_b, int start, int end,
+			t_flags *flags)
 {
 	int		j;
 	t_stack	*i;
@@ -74,10 +75,10 @@ static void	push_chunk(t_stack **stack_a, t_stack **stack_b, int start, int end)
 		if (!i)
 			break ;
 		j = i->index;
-		move_to_top(stack_a, j, 0);
-		pb(stack_a, stack_b);
+		move_to_top(stack_a, j, 0, flags);
+		pb(stack_a, stack_b, flags);
 		if (j < start + (end - start) / 2)
-			rb(stack_b);
+			rb(stack_b, flags);
 	}
 }
 
@@ -93,7 +94,7 @@ static int	round_sqrt(int size)
 	return (i);
 }
 
-void	chunk_sort(t_stack **stack_a, t_stack **stack_b)
+void	chunk_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags)
 {
 	int	chunk;
 	int	start;
@@ -110,14 +111,14 @@ void	chunk_sort(t_stack **stack_a, t_stack **stack_b)
 		end = start + chunk;
 		if (end > size)
 			end = size;
-		push_chunk(stack_a, stack_b, start, end);
+		push_chunk(stack_a, stack_b, start, end, flags);
 		start = end;
 	}
 	max_index = size - 1;
 	while (*stack_b)
 	{
-		move_to_top(stack_b, max_index, 1);
-		pa(stack_a, stack_b);
+		move_to_top(stack_b, max_index, 1, flags);
+		pa(stack_a, stack_b, flags);
 		max_index--;
 	}
 }

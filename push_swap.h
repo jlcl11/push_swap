@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 12:03:19 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 13:17:54 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ typedef enum e_strategy
 
 typedef struct s_flags
 {
+	double		disorder;
+	int			pa;
+	int			pb;
+	int			sa;
+	int			sb;
+	int			ss;
+	int			ra;
+	int			rb;
+	int			rr;
+	int			rra;
+	int			rrb;
+	int			rrr;
+	int			total;
+	char		*strag_name;
+	char		*complexity;
 	t_strategy	strategy;
 	int			bench;
 }	t_flags;
@@ -54,35 +69,34 @@ long	ft_atol(const char *str);
 int		has_duplicates(t_stack *stack);
 
 /* operations/ */
-void	sa(t_stack **a);
-void	sb(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void	sa(t_stack **a, t_flags *flags);
+void	sb(t_stack **b, t_flags *flags);
+void	ss(t_stack **a, t_stack **b, t_flags *flags);
+void	pa(t_stack **a, t_stack **b, t_flags *flags);
+void	pb(t_stack **a, t_stack **b, t_flags *flags);
+void	ra(t_stack **a, t_flags *flags);
+void	rb(t_stack **b, t_flags *flags);
+void	rr(t_stack **a, t_stack **b, t_flags *flags);
+void	rra(t_stack **a, t_flags *flags);
+void	rrb(t_stack **b, t_flags *flags);
+void	rrr(t_stack **a, t_stack **b, t_flags *flags);
 
 /* selection_algorithm.c */
 int		is_sorted(t_stack *stack);
-void	selection_sort(t_stack **a, t_stack **b);
+void	selection_sort(t_stack **a, t_stack **b, t_flags *flags);
 
 /* compute_disorder.c */
 double	compute_disorder(t_stack *stack);
 
 /* chunck_algorithm.c */
 void	index_list(t_stack *stack);
-void	chunk_sort(t_stack **stack_a, t_stack **stack_b);
+void	chunk_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
 
 /* radix_sort_algorithm.c */
-void	radix_sort(t_stack **stack_a, t_stack **stack_b);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
 
 /* adaptative_algorithm.c */
-void	adaptative_sort(t_stack **stack_a, t_stack **stack_b);
-void	sort_three(t_stack **stack);
-void	sort_five(t_stack **stack_a, t_stack **stack_b);
+void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
+void	sort_three(t_stack **stack, t_flags *flags);
 
 #endif

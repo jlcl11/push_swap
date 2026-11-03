@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 16:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/10/16 16:00:00 by jocorral         ###   ########.fr       */
+/*   Updated: 2026/11/03 12:47:55 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,20 @@ static void	push(t_stack **src, t_stack **dst)
 
 /* pa (push a): toma el primer elemento de b y lo pone encima de a */
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, t_flags *flags)
 {
 	push(b, a);
+	flags->pa++;
+	flags->total++;
 	ft_printf("pa\n");
 }
 
 /* pb (push b): toma el primer elemento de a y lo pone encima de b */
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, t_flags *flags)
 {
 	push(a, b);
+	flags->pb++;
+	flags->total++;
 	ft_printf("pb\n");
 }

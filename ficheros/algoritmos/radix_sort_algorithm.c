@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 13:49:16 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/02 11:15:00 by jocorral         ###   ########.fr       */
+/*   Updated: 2026/11/03 13:23:51 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	get_max_bits(int size)
 	return (bits);
 }
 
-void	radix_sort(t_stack **stack_a, t_stack **stack_b)
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags)
 {
 	int	max_bits;
 	int	size;
@@ -41,13 +41,13 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 		while (j < size)
 		{
 			if ((((*stack_a)->index >> i) & 1) == 0)
-				pb(stack_a, stack_b);
+				pb(stack_a, stack_b, flags);
 			else
-				ra(stack_a);
+				ra(stack_a, flags);
 			j++;
 		}
 		while (*stack_b)
-			pa(stack_a, stack_b);
+			pa(stack_a, stack_b, flags);
 		i++;
 	}
 }

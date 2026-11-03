@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocorral <jocorral@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/02 16:05:59 by jocorral         ###   ########.fr       */
+/*   Updated: 2026/11/03 13:26:35 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@ static int	error_exit(t_stack **a)
 
 /* Ejecuta el algoritmo de la estrategia elegida con las flags */
 
-static void	run_strategy(t_stack **a, t_stack **b, t_strategy strategy)
+static void	run_strategy(t_stack **a, t_stack **b, t_strategy strategy,
+	t_flags *flags)
 {
 	if (strategy == STRAT_SIMPLE)
-		selection_sort(a, b);
+		selection_sort(a, b, flags);
 	else if (strategy == STRAT_MEDIUM)
-		chunk_sort(a, b);
+		chunk_sort(a, b, flags);
 	else if (strategy == STRAT_COMPLEX)
-		radix_sort(a, b);
+		radix_sort(a, b, flags);
 	else
-		adaptative_sort(a, b);
+		adaptative_sort(a, b, flags);
 }
 
 /*
@@ -57,7 +58,7 @@ int	main(int argc, char **argv)
 	if (!parse_args(argc - first, argv + first, &a))
 		return (error_exit(&a));
 	if (!is_sorted(a))
-		run_strategy(&a, &b, flags.strategy);
+		run_strategy(&a, &b, flags.strategy, &flags);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

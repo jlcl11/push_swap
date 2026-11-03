@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   reverse_rotate.c                                  :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 14:10:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/16 14:10:00 by jocorral        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/16 14:10:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/03 12:49:59 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,31 @@ static void	reverse_rotate(t_stack **stack)
 
 /* rra (reverse rotate a): reverse_rotate sobre a */
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, t_flags *flags)
 {
 	reverse_rotate(a);
+	flags->rra++;
+	flags->total++;
 	ft_printf("rra\n");
 }
 
 /* rrb (reverse rotate b): reverse_rotate sobre b */
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, t_flags *flags)
 {
 	reverse_rotate(b);
+	flags->rrb++;
+	flags->total++;
 	ft_printf("rrb\n");
 }
 
 /* rrr: rra y rrb a la vez, imprime una sola línea */
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b, t_flags *flags)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
+	flags->rrr++;
+	flags->total++;
 	ft_printf("rrr\n");
 }
