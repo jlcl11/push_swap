@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 17:08:28 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 17:44:05 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ void	display_bench(t_flags *flags)
 
 	disord1 = (int)(flags->disorder * 100);
 	disord2 = (int)(flags->disorder * 10000 - disord1 * 100);
-	ft_printf("[bench] ");
-	ft_printf("disorder: %d.%d\n", disord1, disord2);
-	ft_printf("[bench] ");
-	ft_printf("strategy: %s / %s\n", flags->strag_name, flags->complexity);
-	ft_printf("[bench] ");
-	ft_printf("total_ops: %d\n", flags->total);
-	ft_printf("[bench] ");
-	ft_printf("sa: %d  sb: %d  ss: %d  ", flags->sa, flags->sb,flags->ss);
-	ft_printf("pa: %d  pb: %d\n", flags->pa, flags->pb);
-	ft_printf("[bench] ");
-	ft_printf("ra: %d  rb: %d  rr: %d  ", flags->ra, flags->rb,flags->rr);
-	ft_printf("rra: %d  rrb: %d  rrr: %d\n", flags->rra, flags->rrb,
+	ft_printf_error("[bench] ");
+	ft_printf_error("disorder: %d.%d\n", disord1, disord2);
+	ft_printf_error("[bench] ");
+	ft_printf_error("strategy: %s / %s\n", flags->strag_name, flags->complexity);
+	ft_printf_error("[bench] ");
+	ft_printf_error("total_ops: %d\n", flags->total);
+	ft_printf_error("[bench] ");
+	ft_printf_error("sa: %d  sb: %d  ss: %d  ", flags->sa, flags->sb,flags->ss);
+	ft_printf_error("pa: %d  pb: %d\n", flags->pa, flags->pb);
+	ft_printf_error("[bench] ");
+	ft_printf_error("ra: %d  rb: %d  rr: %d  ", flags->ra, flags->rb,flags->rr);
+	ft_printf_error("rra: %d  rrb: %d  rrr: %d\n", flags->rra, flags->rrb,
 		flags->rrr);
 }
 /*
