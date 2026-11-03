@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 13:49:16 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/03 13:39:10 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:16:39 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	sort_three(t_stack **stack, t_flags *flags)
 		rra(stack, flags);
 }
 
-void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags)
+void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunky,
+	t_flags *flags)
 {
 	int		size;
 
@@ -56,7 +57,7 @@ void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags)
 		selection_sort(stack_a, stack_b, flags);
 	else if (flags->disorder >= 0.2 && flags->disorder < 0.5)
 	{
-		chunk_sort(stack_a, stack_b, flags);
+		chunk_sort(stack_a, stack_b, chunky, flags);
 		flags->complexity = "O(n√n)";
 	}
 	else if (flags->disorder >= 0.5)

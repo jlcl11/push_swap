@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 13:49:16 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/03 13:23:51 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:03:27 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags)
 	int	i;
 	int	j;
 
+	flags->disorder = compute_disorder(*stack_a);
 	size = stack_size(*stack_a);
 	max_bits = get_max_bits(size);
 	index_list(*stack_a);

@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 13:26:35 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:17:55 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ static int	error_exit(t_stack **a)
 
 /* Ejecuta el algoritmo de la estrategia elegida con las flags */
 
-static void	run_strategy(t_stack **a, t_stack **b, t_strategy strategy,
+static void	run_strategy(t_stack **a, t_stack **b, t_chunk *chunky,
 	t_flags *flags)
 {
-	if (strategy == STRAT_SIMPLE)
+	if (flags->strategy == STRAT_SIMPLE)
 		selection_sort(a, b, flags);
-	else if (strategy == STRAT_MEDIUM)
-		chunk_sort(a, b, flags);
-	else if (strategy == STRAT_COMPLEX)
+	else if (flags->strategy == STRAT_MEDIUM)
+		chunk_sort(a, b, chunky, flags);
+	else if (flags->strategy == STRAT_COMPLEX)
 		radix_sort(a, b, flags);
 	else
-		adaptative_sort(a, b, flags);
+		adaptative_sort(a, b, chunky, flags);
 }
 
 /*
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 	t_flags	flags;
+	t_chunk	chunky;
 	int		first;
 
 	a = NULL;
@@ -58,7 +59,7 @@ int	main(int argc, char **argv)
 	if (!parse_args(argc - first, argv + first, &a))
 		return (error_exit(&a));
 	if (!is_sorted(a))
-		run_strategy(&a, &b, flags.strategy, &flags);
+		run_strategy(&a, &b, &chunky, &flags);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

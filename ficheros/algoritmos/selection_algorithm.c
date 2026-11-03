@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 15:53:42 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 13:39:34 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:03:46 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ static void	min_to_top(t_stack **a, t_flags *flags)
 
 void	selection_sort(t_stack **a, t_stack **b, t_flags *flags)
 {
+	flags->disorder = compute_disorder(*a);
 	if (!a || !*a)
 		return ;
 	while (!is_sorted(*a))

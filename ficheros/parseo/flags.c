@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 13:45:14 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:08:00 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ static void	init_bench_count(t_flags *flags)
 	flags->rrb = 0;
 	flags->rrr = 0;
 	flags->total = 0;
+	flags->strag_name = NULL;
+	flags->complexity = NULL;
 }
 static void	set_description(t_flags *flags)
 {
@@ -80,7 +82,7 @@ static void	set_description(t_flags *flags)
 	else if (flags->strategy == STRAT_COMPLEX)
 	{
 		flags->strag_name = "Complex";
-		flags->complexity = "O(nlogn)";
+		flags->complexity = "O(n log n)";
 	}
 	else
 		flags->strag_name = "Adaptive";

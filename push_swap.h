@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 13:17:54 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:17:24 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,13 @@ typedef struct s_flags
 	int			bench;
 }	t_flags;
 
-typedef struct s_stack
+typedef struct	s_chunk
+{
+	int	start;
+	int	end;
+}	t_chunk;
+
+typedef struct	s_stack
 {
 	int				value;
 	int				index;
@@ -90,13 +96,15 @@ double	compute_disorder(t_stack *stack);
 
 /* chunck_algorithm.c */
 void	index_list(t_stack *stack);
-void	chunk_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
+void	chunk_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunky,
+	t_flags *flags);
 
 /* radix_sort_algorithm.c */
 void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
 
 /* adaptative_algorithm.c */
-void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
+void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunky,
+	t_flags *flags);
 void	sort_three(t_stack **stack, t_flags *flags);
 
 #endif
