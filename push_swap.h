@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   push_swap.h                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/23 17:08:08 by jocorral        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/03 12:03:19 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 /* adaptative_algorithm.c */
 void	adaptative_sort(t_stack **stack_a, t_stack **stack_b);
+void	sort_three(t_stack **stack);
+void	sort_five(t_stack **stack_a, t_stack **stack_b);
 
 #endif
