@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 18:35:18 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 19:10:16 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ static void	run_strategy(t_stack **a, t_stack **b, t_chunk *chunky,
 	else
 		adaptative_sort(a, b, chunky, flags);
 }
+
 void	display_bench_continue(t_flags *flags)
 {
+	ft_putnbr_fd(flags->sb, 2);
+	ft_putstr_fd("  ss: ", 2);
 	ft_putnbr_fd(flags->ss, 2);
 	ft_putstr_fd("  pa: ", 2);
 	ft_putnbr_fd(flags->pa, 2);
@@ -68,6 +71,8 @@ void	display_bench(t_flags *flags)
 	ft_putstr_fd("[bench] disorder: ", 2);
 	ft_putnbr_fd(disord1, 2);
 	ft_putchar_fd('.', 2);
+	if (disord2 < 10)
+		ft_putchar_fd('0', 2);
 	ft_putnbr_fd(disord2, 2);
 	ft_putstr_fd("%\n", 2);
 	ft_putstr_fd("[bench] strategy: ", 2);
@@ -81,8 +86,6 @@ void	display_bench(t_flags *flags)
 	ft_putstr_fd("[bench] sa: ", 2);
 	ft_putnbr_fd(flags->sa, 2);
 	ft_putstr_fd("  sb: ", 2);
-	ft_putnbr_fd(flags->sb, 2);
-	ft_putstr_fd("  ss: ", 2);
 	display_bench_continue(flags);
 }
 /*
