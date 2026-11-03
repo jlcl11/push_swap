@@ -6,7 +6,7 @@
 /*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 13:49:16 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/03 14:16:39 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 18:10:32 by jnunez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	sort_three(t_stack **stack, t_flags *flags)
 	int	second;
 	int	third;
 
+	flags->complexity = "O(1)";
 	first = (*stack)->index;
 	second = (*stack)->next->index;
 	third = (*stack)->next->next->index;
