@@ -39,20 +39,19 @@ El programa incluye cuatro estrategias:
 
 **`jocorral`**
 
-* Las once **operaciones de pila**.
+* Las once **operaciones de pila** (los movimientos en sí).
 * La **estrategia simple** (ordenación por selección).
 * La **gestión de las pilas** (`stack.c`).
 * El **parser y la validación de la entrada**, y la lectura de las flags.
+* El **Makefile** y la organización del proyecto en carpetas.
 * El merge de las ramas y la documentación.
 
 **`jnunez-b`**
 
 * La **estrategia media** (ordenación por chunks), incluido `index_list`.
 * La **estrategia compleja** (radix sort).
-* La **estrategia adaptativa** y la **métrica de desorden**.
-* El **modo benchmark**, que tiene asignado y sigue en curso.
-
-Los dos podemos explicar cualquier parte del código.
+* La **estrategia adaptativa**, incluidos los casos de 2 y 3 números, y la **métrica de desorden**.
+* El **modo benchmark**: los contadores de cada operación, la estrategia y complejidad que se muestran, y la impresión del resumen (`display_bench`).
 
 
 ## Instrucciones
@@ -84,7 +83,7 @@ pa
 pa
 ```
 
-Si los números ya están ordenados, o si no se pasa ninguno, no imprime nada.
+Si los números ya están ordenados, o si no se pasa ninguno, no imprime ninguna operación. Con `--bench` y una lista ordenada sí imprime el resumen en `stderr`, como se ve en [Cómo ejecutar el benchmark](#cómo-ejecutar-el-benchmark).
 
 ### Cómo usar el checker
 
@@ -131,6 +130,48 @@ OK
 
 ---
 
+### Cómo ejecutar el benchmark
+
+Para generar `args.txt` con `shuf`, ver el resumen en la terminal y pasar las operaciones al checker:
+
+```bash
+shuf -i 0-9999 -n 500 > args.txt ; ./push_swap --bench $(cat args.txt) | ./checker_linux $(cat args.txt)
+```
+
+El pipe solo pasa `stdout`, así que el checker recibe únicamente las operaciones y el resumen de `stderr` sale en la terminal:
+
+```text
+[bench] disorder: 51.99%
+[bench] strategy: Adaptive / O(nlogn)
+[bench] total_ops: 6784
+[bench] sa: 0  sb: 0  ss: 0  pa: 2284  pb: 2284
+[bench] ra: 2216  rb: 0  rr: 0  rra: 0  rrb: 0  rrr: 0
+OK
+```
+
+Para guardar el resumen en `bench.txt` en lugar de verlo en la terminal:
+
+```bash
+shuf -i 0-9999 -n 500 > args.txt
+./push_swap --bench $(cat args.txt) 2> bench.txt | ./checker_linux $(cat args.txt)
+cat bench.txt
+```
+
+**Lista ya ordenada.** Si no se fuerza ningún selector, el programa no usa ninguna estrategia, porque no hay movimientos que hacer. Lo indica con `(None!)` en lugar de la complejidad, y no imprime ninguna operación:
+
+```text
+$> ./push_swap --bench 1 2 3 4 5
+[bench] disorder: 0.00%
+[bench] strategy: Adaptive / (None!)
+[bench] total_ops: 0
+[bench] sa: 0  sb: 0  ss: 0  pa: 0  pb: 0
+[bench] ra: 0  rb: 0  rr: 0  rra: 0  rrb: 0  rrr: 0
+```
+
+Con un selector forzado tampoco se ejecuta ningún algoritmo, pero el resumen muestra el selector pedido y su clase, por ejemplo `Simple / O(n²)`, con `total_ops: 0`.
+
+---
+
 ### Cómo comprobar la memoria con valgrind
 
 ```bash
@@ -142,14 +183,6 @@ valgrind --leak-check=full --show-leak-kinds=all ./push_swap 4 67 3 87 23 > /dev
 ```text
 All heap blocks were freed -- no leaks are possible
 ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-```
-
-Conviene repetirlo con una entrada grande y con una que dé error, porque ese camino también debe liberar la memoria:
-
-```bash
-ARG=$(shuf -i 0-9999 -n 500 | tr '\n' ' ')
-valgrind --leak-check=full --show-leak-kinds=all ./push_swap $ARG > /dev/null
-valgrind --leak-check=full --show-leak-kinds=all ./push_swap 1 2 hello > /dev/null
 ```
 
 ## Selección de estrategia
@@ -165,24 +198,14 @@ valgrind --leak-check=full --show-leak-kinds=all ./push_swap 1 2 hello > /dev/nu
 
 ## Benchmark
 
-`--bench` está pensado para escribir lo siguiente en `stderr` después de ordenar, dejando las operaciones en `stdout`:
+`--bench` escribe lo siguiente en `stderr` después de ordenar, dejando las operaciones en `stdout`:
 
 * El desorden, en porcentaje con dos decimales.
 * La estrategia usada y su clase de complejidad.
 * El número total de operaciones.
 * El número de operaciones de cada tipo.
 
-Las operaciones se imprimen siempre, también con `--bench`. Para generar `args.txt` con `shuf`, guardar el resumen en `bench.txt` y pasar las operaciones al checker:
-
-```bash
-shuf -i 0-9999 -n 500 > args.txt
-./push_swap --bench $(cat args.txt) 2> bench.txt | ./checker_linux $(cat args.txt)
-cat bench.txt
-```
-
-`2> bench.txt` guarda solo `stderr`, y el pipe solo pasa `stdout`, así que el checker recibe únicamente las operaciones. Debe imprimir `OK`.
-
-**Estado actual:** la flag se acepta, pero este resumen aún no está implementado, así que no imprime nada adicional.
+Las operaciones se imprimen siempre, también con `--bench`. Los comandos y ejemplos de salida están en [Cómo ejecutar el benchmark](#cómo-ejecutar-el-benchmark), incluido el caso de una lista ya ordenada.
 
 ---
 
@@ -327,13 +350,7 @@ Si la entrada no es válida, el programa escribe `Error` seguido de un salto de 
 
 ### Uso de IA
 
-Usamos Claude Code (Anthropic) para estas tareas:
-
-* **Pruebas y análisis:** revisar el estado del proyecto frente al enunciado, medir el rendimiento y ejecutar las pruebas de la hoja de evaluación.
 * **Git:** resolver los conflictos de merge entre nuestras ramas.
 * **Correcciones de norma:** en `adaptative_algorithm.c`, `chunck_algorithm.c`, `compute_disorder.c`, `radix_sort_algorithm.c` y `lib/printf/ft_printf.c`.
-* **Código:** `run_strategy` en `main.c`, que conecta las flags con cada algoritmo; `selection_sort` en `selection_algorithm.c`; y el uso de la selección con 5 números o menos en `adaptative_sort`.
 * **Documentación:** el borrador de este README.
-
-Hemos revisado y probado este trabajo nosotros mismos, y los dos somos responsables de entenderlo.
 

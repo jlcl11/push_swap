@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocorral <jocorral@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 18:35:18 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 19:03:10 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	run_strategy(t_stack **a, t_stack **b, t_chunk *chunky,
 	else
 		adaptative_sort(a, b, chunky, flags);
 }
+
 void	display_bench_continue(t_flags *flags)
 {
 	ft_putnbr_fd(flags->ss, 2);
