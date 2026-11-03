@@ -44,14 +44,12 @@ OBJS = $(OBJ_DIR)/main.o $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 
 all: libft printf $(NAME)
 
-# Compila primero la libft con su propio Makefile
 libft:
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR)
 
 $(LIBFT):
 	@$(MAKE) --no-print-directory -C $(LIBFT_DIR)
 
-# Igual con la ft_printf
 printf:
 	@$(MAKE) --no-print-directory -C $(PRINTF_DIR)
 
@@ -61,12 +59,10 @@ $(PRINTF):
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) $(LIBFT) -o $(NAME)
 
-# main.c está en la raíz, fuera de SRC_DIR
 $(OBJ_DIR)/main.o: main.c $(HEADER)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
-# mkdir -p crea también las subcarpetas de obj/
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -I. -c $< -o $@

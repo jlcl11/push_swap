@@ -12,10 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-** is_sorted: devuelve 1 si la pila está ordenada de menor a mayor.
-*/
-
 int	is_sorted(t_stack *stack)
 {
 	while (stack && stack->next)
@@ -26,8 +22,6 @@ int	is_sorted(t_stack *stack)
 	}
 	return (1);
 }
-
-/* Devuelve la posición del mínimo, contando desde la cima (0) */
 
 static int	get_min_pos(t_stack *stack)
 {
@@ -51,8 +45,6 @@ static int	get_min_pos(t_stack *stack)
 	return (pos);
 }
 
-/* Sube el mínimo a la cima por el camino más corto: ra o rra */
-
 static void	min_to_top(t_stack **a, t_flags *flags)
 {
 	int	pos;
@@ -67,13 +59,6 @@ static void	min_to_top(t_stack **a, t_flags *flags)
 		while (pos++ < size)
 			rra(a, flags);
 }
-
-/*
-** algoritmo_simple: selección, O(n²).
-** Sube el mínimo de a a la cima y lo pasa a b, de modo que b guarda los
-** mínimos con el mayor arriba. Cuando lo que queda en a ya está ordenado,
-** se devuelve todo con pa y los mínimos quedan encima en su orden.
-*/
 
 void	selection_sort(t_stack **a, t_stack **b, t_flags *flags)
 {

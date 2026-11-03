@@ -12,14 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-** swap: intercambia los dos primeros elementos de la cima de la pila.
-** No hace nada si hay uno o ningún elemento. No imprime nada.
-**
-**   antes:   [1] -> [2] -> [3]
-**   después: [2] -> [1] -> [3]
-*/
-
 static void	swap(t_stack **stack)
 {
 	t_stack	*first;
@@ -34,8 +26,6 @@ static void	swap(t_stack **stack)
 	*stack = second;
 }
 
-/* sa (swap a): swap sobre a */
-
 void	sa(t_stack **a, t_flags *flags)
 {
 	swap(a);
@@ -44,8 +34,6 @@ void	sa(t_stack **a, t_flags *flags)
 	ft_printf("sa\n");
 }
 
-/* sb (swap b): swap sobre b */
-
 void	sb(t_stack **b, t_flags *flags)
 {
 	swap(b);
@@ -53,8 +41,6 @@ void	sb(t_stack **b, t_flags *flags)
 	flags->total++;
 	ft_printf("sb\n");
 }
-
-/* ss: sa y sb a la vez, imprime una sola línea */
 
 void	ss(t_stack **a, t_stack **b, t_flags *flags)
 {

@@ -28,16 +28,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-char	dst[20];
-
-ft_memcpy(dst, "hola mundo", 11);
-printf("%s\n", dst);
-return (0);
-}
-*/

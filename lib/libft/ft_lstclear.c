@@ -25,29 +25,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = next;
 	}
 }
-
-/*
-#include <stdio.h>
-
-static void	del(void *content)
-{
-	free(content);
-}
-
-int	main(void)
-{
-	t_list	*lst;
-	int		*a;
-	int		*b;
-
-	a = malloc(sizeof(int));
-	b = malloc(sizeof(int));
-	*a = 1;
-	*b = 2;
-	lst = ft_lstnew(a);
-	ft_lstadd_front(&lst, ft_lstnew(b));
-	ft_lstclear(&lst, del);
-	printf("lst == NULL: %d\n", lst == NULL);
-	return (0);
-}
-*/

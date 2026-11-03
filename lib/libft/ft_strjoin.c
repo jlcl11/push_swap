@@ -42,17 +42,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ret[end] = '\0';
 	return (ret);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s;
-
-	s = ft_strjoin("hola ", "mundo");
-	printf("%s\n", s);
-	free(s);
-	return (0);
-}
-*/

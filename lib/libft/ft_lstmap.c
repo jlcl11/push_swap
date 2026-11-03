@@ -43,37 +43,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
-
-/*
-#include <stdio.h>
-
-static void	del(void *content)
-{
-	free(content);
-}
-
-static void	*duplicate(void *content)
-{
-	int	*n;
-
-	n = malloc(sizeof(int));
-	if (n)
-		*n = *(int *)content;
-	return (n);
-}
-
-int	main(void)
-{
-	t_list	*lst;
-	t_list	*copy;
-	int		a;
-
-	a = 7;
-	lst = ft_lstnew(&a);
-	copy = ft_lstmap(lst, duplicate, del);
-	printf("%d\n", *(int *)copy->content);
-	free(lst);
-	ft_lstclear(&copy, del);
-	return (0);
-}
-*/

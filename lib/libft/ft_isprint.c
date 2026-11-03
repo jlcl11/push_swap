@@ -18,14 +18,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("%d\n", ft_isprint(' '));
-	printf("%d\n", ft_isprint('\n'));
-	return (0);
-}
-*/

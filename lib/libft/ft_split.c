@@ -100,21 +100,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (ret);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-char	**parts;
-int		i;
-
-parts = ft_split("hola  mundo cruel", ' ');
-i = 0;
-while (parts[i])
-{
-printf("[%s]\n", parts[i]);
-i++;
-}
-free_mem(parts);
-return (0);
-}*/

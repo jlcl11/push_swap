@@ -27,11 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *) s);
 	return ((char *) last);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-printf("%s\n", ft_strrchr("hola mundo", 'u'));
-return (0);
-}*/

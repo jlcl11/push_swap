@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// volver
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -27,17 +26,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	buf[10];
-
-	ft_memset(buf, 'x', 9);
-	buf[9] = '\0';
-	printf("%s\n", buf);
-	return (0);
-}
-*/

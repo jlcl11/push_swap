@@ -35,17 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ret[i] = '\0';
 	return (ret);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s;
-
-	s = ft_substr("hola mundo", 5, 5);
-	printf("%s\n", s);
-	free(s);
-	return (0);
-}
-*/

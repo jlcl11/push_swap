@@ -19,24 +19,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del(lst->content);
 	free(lst);
 }
-/*
-#include <stdio.h>
-
-static void	del(void *content)
-{
-free(content);
-}
-
-int	main(void)
-{
-t_list	*node;
-int		*value;
-
-value = malloc(sizeof(int));
-*value = 42;
-node = ft_lstnew(value);
-ft_lstdelone(node, del);
-printf("nodo liberado\n");
-return (0);
-}
-*/

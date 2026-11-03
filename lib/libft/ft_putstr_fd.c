@@ -25,11 +25,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-
-/*
-int	main(void)
-{
-	ft_putstr_fd("hola mundo\n", 1);
-	return (0);
-}
-*/

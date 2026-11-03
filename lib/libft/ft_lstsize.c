@@ -24,19 +24,3 @@ unsigned int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	t_list	*lst;
-	int		a;
-
-	a = 1;
-	lst = ft_lstnew(&a);
-	ft_lstadd_front(&lst, ft_lstnew(&a));
-	printf("size: %u\n", ft_lstsize(lst));
-	return (0);
-}
-*/

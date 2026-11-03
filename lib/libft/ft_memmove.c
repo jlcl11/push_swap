@@ -44,15 +44,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		ft_memmove_back_to_front(dest, source, len);
 	return (dst);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-char	buf[] = "hola mundo";
-
-ft_memmove(buf + 1, buf, 4);
-printf("%s\n", buf);
-return (0);
-}*/

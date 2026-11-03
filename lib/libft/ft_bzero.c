@@ -25,14 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-char	buf[6] = "hola!";
-
-ft_bzero(buf, 6);
-printf("%d %d %d\n", buf[0], buf[1], buf[5]);
-return (0);
-}*/

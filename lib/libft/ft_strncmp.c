@@ -30,14 +30,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-printf("%d\n", ft_strncmp("hola", "holanda", 4));
-printf("%d\n", ft_strncmp("hola", "holanda", 5));
-return (0);
-}
-*/

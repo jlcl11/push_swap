@@ -36,14 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return ((int)(ret * signo));
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("%d\n", ft_atoi("   -42 texto"));
-	printf("%d\n", ft_atoi("+123"));
-	return (0);
-}
-*/

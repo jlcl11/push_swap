@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-/* Crea un nodo nuevo con el valor dado (ft_calloc ya deja next a NULL) */
 t_stack	*stack_new(int value)
 {
 	t_stack	*node;
@@ -24,7 +23,6 @@ t_stack	*stack_new(int value)
 	return (node);
 }
 
-/* Mete el nodo en la cima de la pila */
 void	stack_push(t_stack **stack, t_stack *node)
 {
 	if (!stack || !node)
@@ -33,7 +31,6 @@ void	stack_push(t_stack **stack, t_stack *node)
 	*stack = node;
 }
 
-/* Mete el nodo al fondo de la pila (útil al parsear los argumentos) */
 void	stack_add_back(t_stack **stack, t_stack *node)
 {
 	t_stack	*last;
@@ -51,7 +48,6 @@ void	stack_add_back(t_stack **stack, t_stack *node)
 	last->next = node;
 }
 
-/* Devuelve el número de elementos de la pila */
 int	stack_size(t_stack *stack)
 {
 	int	size;
@@ -65,7 +61,6 @@ int	stack_size(t_stack *stack)
 	return (size);
 }
 
-/* Libera todos los nodos y deja la pila a NULL */
 void	stack_clear(t_stack **stack)
 {
 	t_stack	*tmp;

@@ -5,9 +5,5 @@ obj/
 *.a
 push_swap
 checker_linux
-DOCUMENTACION.md
-ESTADO.md
 args.txt
-README Salva (hacer otro).md
-PENDIENTE.txt
 bench.txt

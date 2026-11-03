@@ -60,21 +60,18 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-/* stack.c */
 t_stack	*stack_new(int value);
 void	stack_push(t_stack **stack, t_stack *node);
 void	stack_add_back(t_stack **stack, t_stack *node);
 int		stack_size(t_stack *stack);
 void	stack_clear(t_stack **stack);
 
-/* flags.c, parse.c, parse_utils.c */
 int		parse_flags(int argc, char **argv, t_flags *flags);
 int		parse_args(int count, char **args, t_stack **a);
 int		is_number(const char *str);
 long	ft_atol(const char *str);
 int		has_duplicates(t_stack *stack);
 
-/* operations/ */
 void	sa(t_stack **a, t_flags *flags);
 void	sb(t_stack **b, t_flags *flags);
 void	ss(t_stack **a, t_stack **b, t_flags *flags);
@@ -87,22 +84,17 @@ void	rra(t_stack **a, t_flags *flags);
 void	rrb(t_stack **b, t_flags *flags);
 void	rrr(t_stack **a, t_stack **b, t_flags *flags);
 
-/* selection_algorithm.c */
 int		is_sorted(t_stack *stack);
 void	selection_sort(t_stack **a, t_stack **b, t_flags *flags);
 
-/* compute_disorder.c */
 double	compute_disorder(t_stack *stack);
 
-/* chunck_algorithm.c */
 void	index_list(t_stack *stack);
 void	chunk_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunky,
 			t_flags *flags);
 
-/* radix_sort_algorithm.c */
 void	radix_sort(t_stack **stack_a, t_stack **stack_b, t_flags *flags);
 
-/* adaptative_algorithm.c */
 void	adaptative_sort(t_stack **stack_a, t_stack **stack_b, t_chunk *chunky,
 			t_flags *flags);
 void	sort_three(t_stack **stack, t_flags *flags);

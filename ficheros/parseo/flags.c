@@ -12,17 +12,10 @@
 
 #include "push_swap.h"
 
-/* Devuelve 1 si arg es exactamente flag (el +1 compara también el '\0') */
-
 static int	is_flag(const char *arg, const char *flag)
 {
 	return (ft_strncmp(arg, flag, ft_strlen(flag) + 1) == 0);
 }
-
-/*
-** Guarda la estrategia de un selector (--simple, --medium...).
-** Devuelve 0 si arg no es un selector o si ya se había elegido uno.
-*/
 
 static int	set_strategy(const char *arg, t_flags *flags, int *chosen)
 {
@@ -42,13 +35,6 @@ static int	set_strategy(const char *arg, t_flags *flags, int *chosen)
 	return (1);
 }
 
-/*
-** Lee las flags que van antes de los números, en cualquier orden:
-**   ./push_swap --bench --simple 3 2 1
-** Sin selector se usa --adaptive. Una flag desconocida, repetida o dos
-** selectores a la vez son un error.
-** Devuelve el índice del primer número en argv, o -1 si hay error.
-*/
 static void	init_bench_count(t_flags *flags)
 {
 	flags->disorder = 0;

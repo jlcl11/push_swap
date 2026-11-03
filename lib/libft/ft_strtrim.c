@@ -71,17 +71,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ret[i] = '\0';
 	return (ret);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s;
-
-	s = ft_strtrim("   hola mundo   ", " ");
-	printf("[%s]\n", s);
-	free(s);
-	return (0);
-}
-*/

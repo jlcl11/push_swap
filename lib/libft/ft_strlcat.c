@@ -38,14 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (dstlen + srclen);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-char	dst[10] = "hola ";
-
-printf("return: %zu\n", ft_strlcat(dst, "mundo", sizeof(dst)));
-printf("dst: %s\n", dst);
-return (0);
-}*/

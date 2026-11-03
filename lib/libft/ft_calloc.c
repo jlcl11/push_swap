@@ -32,24 +32,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (puntero);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-int	*arr;
-int	i;
-
-arr = ft_calloc(5, sizeof(int));
-i = 0;
-while (i < 5)
-{
-printf("%d ", arr[i]);
-i++;
-}
-printf("\n");
-free(arr);
-return (0);
-}
-*/

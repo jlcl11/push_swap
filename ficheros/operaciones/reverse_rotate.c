@@ -12,14 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-** reverse_rotate: el último elemento pasa a ser el primero. No imprime nada.
-** Suelta el último nodo y lo mete en la cima con stack_push.
-**
-**   antes:   [1] -> [2] -> [3]
-**   después: [3] -> [1] -> [2]
-*/
-
 static void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*before_last;
@@ -35,8 +27,6 @@ static void	reverse_rotate(t_stack **stack)
 	stack_push(stack, last);
 }
 
-/* rra (reverse rotate a): reverse_rotate sobre a */
-
 void	rra(t_stack **a, t_flags *flags)
 {
 	reverse_rotate(a);
@@ -45,8 +35,6 @@ void	rra(t_stack **a, t_flags *flags)
 	ft_printf("rra\n");
 }
 
-/* rrb (reverse rotate b): reverse_rotate sobre b */
-
 void	rrb(t_stack **b, t_flags *flags)
 {
 	reverse_rotate(b);
@@ -54,8 +42,6 @@ void	rrb(t_stack **b, t_flags *flags)
 	flags->total++;
 	ft_printf("rrb\n");
 }
-
-/* rrr: rra y rrb a la vez, imprime una sola línea */
 
 void	rrr(t_stack **a, t_stack **b, t_flags *flags)
 {

@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-/* Libera el array que devuelve ft_split */
-
 static void	free_split(char **split)
 {
 	int	i;
@@ -26,11 +24,6 @@ static void	free_split(char **split)
 	}
 	free(split);
 }
-
-/*
-** Valida cada palabra, la convierte y la añade al fondo de a.
-** Devuelve 0 si alguna no es un número, se sale de int o falla malloc.
-*/
 
 static int	add_numbers(t_stack **a, char **nums)
 {
@@ -54,15 +47,6 @@ static int	add_numbers(t_stack **a, char **nums)
 	}
 	return (1);
 }
-
-/*
-** Recibe solo los argumentos de números (las flags ya se han saltado).
-** Ejemplo: ./push_swap 3 "1 2" 4
-** Cada argumento se parte por espacios con ft_split, así también se aceptan
-** números entre comillas. El primer número queda en la cima de la pila.
-** Un argumento vacío ("" o "   ") es un error.
-** Devuelve 1 si todo es correcto y no hay repetidos, 0 si no.
-*/
 
 int	parse_args(int count, char **args, t_stack **a)
 {

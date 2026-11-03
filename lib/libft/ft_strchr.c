@@ -22,11 +22,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *) s);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-printf("%s\n", ft_strchr("hola mundo", 'm'));
-return (0);
-}*/

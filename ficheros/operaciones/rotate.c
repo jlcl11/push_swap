@@ -12,14 +12,6 @@
 
 #include "push_swap.h"
 
-/*
-** rotate: el primer elemento pasa a ser el último. No imprime nada.
-** Saca la cima y la mete al fondo con stack_add_back.
-**
-**   antes:   [1] -> [2] -> [3]
-**   después: [2] -> [3] -> [1]
-*/
-
 static void	rotate(t_stack **stack)
 {
 	t_stack	*first;
@@ -32,8 +24,6 @@ static void	rotate(t_stack **stack)
 	stack_add_back(stack, first);
 }
 
-/* ra (rotate a): rotate sobre a */
-
 void	ra(t_stack **a, t_flags *flags)
 {
 	rotate(a);
@@ -42,8 +32,6 @@ void	ra(t_stack **a, t_flags *flags)
 	ft_printf("ra\n");
 }
 
-/* rb (rotate b): rotate sobre b */
-
 void	rb(t_stack **b, t_flags *flags)
 {
 	rotate(b);
@@ -51,8 +39,6 @@ void	rb(t_stack **b, t_flags *flags)
 	flags->total++;
 	ft_printf("rb\n");
 }
-
-/* rr: ra y rb a la vez, imprime una sola línea */
 
 void	rr(t_stack **a, t_stack **b, t_flags *flags)
 {
