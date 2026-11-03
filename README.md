@@ -105,15 +105,17 @@ ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
 ARG="4 67 3 87 23"; ./push_swap --complex $ARG | ./checker_linux $ARG
 ```
 
-Para probar con 500 números aleatorios y contar las operaciones:
+En zsh, escribe `${=ARG}` en lugar de `$ARG`.
+
+Para probar con 500 números aleatorios y contar las operaciones, como en el enunciado:
 
 ```bash
-ARG=$(shuf -i 0-9999 -n 500 | tr '\n' ' ')
-./push_swap $ARG | ./checker_linux $ARG
-./push_swap $ARG | wc -l
+shuf -i 0-9999 -n 500 > args.txt
+./push_swap $(cat args.txt) | ./checker_linux $(cat args.txt)
+./push_swap $(cat args.txt) | wc -l
 ```
 
-En zsh, escribe `${=ARG}` en lugar de `$ARG`.
+`shuf` escribe un número por línea. `push_swap` no lee tabuladores ni saltos de línea: es el shell quien los elimina al separar los argumentos de `$(cat args.txt)`, siempre que vaya sin comillas.
 
 También se pueden escribir las operaciones a mano, una por línea, y terminar con `Ctrl+D`:
 
@@ -169,6 +171,16 @@ valgrind --leak-check=full --show-leak-kinds=all ./push_swap 1 2 hello > /dev/nu
 * La estrategia usada y su clase de complejidad.
 * El número total de operaciones.
 * El número de operaciones de cada tipo.
+
+Las operaciones se imprimen siempre, también con `--bench`. Para generar `args.txt` con `shuf`, guardar el resumen en `bench.txt` y pasar las operaciones al checker:
+
+```bash
+shuf -i 0-9999 -n 500 > args.txt
+./push_swap --bench $(cat args.txt) 2> bench.txt | ./checker_linux $(cat args.txt)
+cat bench.txt
+```
+
+`2> bench.txt` guarda solo `stderr`, y el pipe solo pasa `stdout`, así que el checker recibe únicamente las operaciones. Debe imprimir `OK`.
 
 **Estado actual:** la flag se acepta, pero este resumen aún no está implementado, así que no imprime nada adicional.
 
@@ -294,7 +306,12 @@ Si la entrada no es válida, el programa escribe `Error` seguido de un salto de 
 ./push_swap 2 3 1 --bench
 ```
 
-Dentro de un argumento entre comillas, los números solo se separan con espacios, así que un tabulador también es un error.
+* **Tabuladores o saltos de línea dentro de un argumento entre comillas.** `push_swap` no los lee como separadores, solo los espacios:
+
+```bash
+./push_swap "$(printf '3\t1\t2')"
+./push_swap "$(cat args.txt)"
+```
 
 ---
 
