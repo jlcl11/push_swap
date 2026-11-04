@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   parse_utils.c                                     :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/26 12:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/10/26 12:00:00 by jocorral        ###   ########.fr        */
+/*   Created: 2026/10/26 12:00:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/10/26 12:00:00 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

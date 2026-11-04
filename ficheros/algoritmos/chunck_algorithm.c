@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chunck_algorithm.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/27 07:12:57 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/03 18:38:05 by jnunez-b         ###   ########.fr       */
+/*   Created: 2026/10/27 07:12:57 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/03 18:38:05 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

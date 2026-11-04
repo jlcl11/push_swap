@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   ft_isdigit.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@42malaga.com>          #+#  +:+       +#+         */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/01 17:07:08 by jocorral         #+#    #+#              */
-/*   Updated: 2026/09/01 17:07:30 by jocorral        ###   ########.fr        */
+/*   Created: 2026/09/01 17:07:08 by jocorral          #+#    #+#             */
+/*   Updated: 2026/09/01 17:07:30 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

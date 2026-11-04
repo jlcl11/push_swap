@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   ft_isalpha.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@42malaga.com>          #+#  +:+       +#+         */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/01 17:06:07 by jocorral         #+#    #+#              */
-/*   Updated: 2026/09/01 17:06:07 by jocorral        ###   ########.fr        */
+/*   Created: 2026/09/01 17:06:07 by jocorral          #+#    #+#             */
+/*   Updated: 2026/09/01 17:06:07 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

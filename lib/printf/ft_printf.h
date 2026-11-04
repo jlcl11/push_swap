@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocorral <jocorral@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/07 12:32:00 by jocorral          #+#    #+#             */
 /*   Updated: 2026/10/08 10:00:00 by jocorral         ###   ########.fr       */

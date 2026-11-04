@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selection_algorithm.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 15:53:42 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 14:03:46 by jnunez-b         ###   ########.fr       */
+/*   Updated: 2026/11/03 14:03:46 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

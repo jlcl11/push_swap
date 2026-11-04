@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptative_algorithm.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/31 13:49:16 by jnunez-b          #+#    #+#             */
-/*   Updated: 2026/11/03 18:41:34 by jnunez-b         ###   ########.fr       */
+/*   Created: 2026/10/31 13:49:16 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/03 18:41:34 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

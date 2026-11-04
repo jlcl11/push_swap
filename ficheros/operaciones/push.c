@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   push.c                                            :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
+/*   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/16 16:00:00 by jocorral         #+#    #+#              */
-/*   Updated: 2026/11/04 11:35:48 by jocorral        ###   ########.fr        */
+/*   Created: 2026/10/16 16:00:00 by jocorral          #+#    #+#             */
+/*   Updated: 2026/11/04 11:35:48 by jocorral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

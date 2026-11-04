@@ -3,7 +3,7 @@
 #                                                        :::      ::::::::   #
 #   Makefile                                           :+:      :+:    :+:   #
 #                                                    +:+ +:+         +:+     #
-#   By: jocorral <jocorral@student.42.fr>          +#+  +:+       +#+        #
+#   By: jocorral <jocorral@student.42malaga.com>   +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2026/09/15 00:00:00 by jocorral          #+#    #+#             #
 #   Updated: 2026/09/15 00:00:00 by jocorral         ###   ########.fr       #
