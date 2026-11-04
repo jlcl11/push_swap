@@ -30,7 +30,7 @@ SRC_DIR = ficheros
 
 PARSING = flags.c parse.c parse_utils.c
 STACK = stack.c
-OPS = push.c swap.c rotate.c reverse_rotate.c
+OPS = push.c swap.c rotate.c reverse_rotate.c op_utils.c
 ALGOS = selection_algorithm.c chunck_algorithm.c radix_sort_algorithm.c \
 	compute_disorder.c adaptative_algorithm.c
 

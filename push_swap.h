@@ -72,6 +72,7 @@ int		is_number(const char *str);
 long	ft_atol(const char *str);
 int		has_duplicates(t_stack *stack);
 
+void	record_op(t_flags *flags, int *counter, const char *name);
 void	sa(t_stack **a, t_flags *flags);
 void	sb(t_stack **b, t_flags *flags);
 void	ss(t_stack **a, t_stack **b, t_flags *flags);

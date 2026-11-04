@@ -27,24 +27,18 @@ static void	rotate(t_stack **stack)
 void	ra(t_stack **a, t_flags *flags)
 {
 	rotate(a);
-	flags->ra++;
-	flags->total++;
-	ft_printf("ra\n");
+	record_op(flags, &flags->ra, "ra");
 }
 
 void	rb(t_stack **b, t_flags *flags)
 {
 	rotate(b);
-	flags->rb++;
-	flags->total++;
-	ft_printf("rb\n");
+	record_op(flags, &flags->rb, "rb");
 }
 
 void	rr(t_stack **a, t_stack **b, t_flags *flags)
 {
 	rotate(a);
 	rotate(b);
-	flags->rr++;
-	flags->total++;
-	ft_printf("rr\n");
+	record_op(flags, &flags->rr, "rr");
 }

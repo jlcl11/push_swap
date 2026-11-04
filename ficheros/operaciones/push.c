@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jnunez-b <jnunez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 16:00:00 by jocorral          #+#    #+#             */
-/*   Updated: 2026/11/03 12:47:55 by jnunez-b         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push.c                                            :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: jocorral <jocorral@student.42malaga.com>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/16 16:00:00 by jocorral         #+#    #+#              */
+/*   Updated: 2026/11/04 11:35:48 by jocorral        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,11 @@ static void	push(t_stack **src, t_stack **dst)
 void	pa(t_stack **a, t_stack **b, t_flags *flags)
 {
 	push(b, a);
-	flags->pa++;
-	flags->total++;
-	ft_printf("pa\n");
+	record_op(flags, &flags->pa, "pa");
 }
 
 void	pb(t_stack **a, t_stack **b, t_flags *flags)
 {
 	push(a, b);
-	flags->pb++;
-	flags->total++;
-	ft_printf("pb\n");
+	record_op(flags, &flags->pb, "pb");
 }

@@ -29,24 +29,18 @@ static void	swap(t_stack **stack)
 void	sa(t_stack **a, t_flags *flags)
 {
 	swap(a);
-	flags->sa++;
-	flags->total++;
-	ft_printf("sa\n");
+	record_op(flags, &flags->sa, "sa");
 }
 
 void	sb(t_stack **b, t_flags *flags)
 {
 	swap(b);
-	flags->sb++;
-	flags->total++;
-	ft_printf("sb\n");
+	record_op(flags, &flags->sb, "sb");
 }
 
 void	ss(t_stack **a, t_stack **b, t_flags *flags)
 {
 	swap(a);
 	swap(b);
-	flags->ss++;
-	flags->total++;
-	ft_printf("ss\n");
+	record_op(flags, &flags->ss, "ss");
 }

@@ -30,24 +30,18 @@ static void	reverse_rotate(t_stack **stack)
 void	rra(t_stack **a, t_flags *flags)
 {
 	reverse_rotate(a);
-	flags->rra++;
-	flags->total++;
-	ft_printf("rra\n");
+	record_op(flags, &flags->rra, "rra");
 }
 
 void	rrb(t_stack **b, t_flags *flags)
 {
 	reverse_rotate(b);
-	flags->rrb++;
-	flags->total++;
-	ft_printf("rrb\n");
+	record_op(flags, &flags->rrb, "rrb");
 }
 
 void	rrr(t_stack **a, t_stack **b, t_flags *flags)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	flags->rrr++;
-	flags->total++;
-	ft_printf("rrr\n");
+	record_op(flags, &flags->rrr, "rrr");
 }
